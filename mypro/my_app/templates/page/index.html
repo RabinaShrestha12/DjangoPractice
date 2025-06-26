@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Home Page</title>
+    {% load static %}
+<link  href ="{% static 'src/styles.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+<div class="bg-white p-8 overflow-auto mt-3 h-screen">
+    <div class ="flex justify-between mb-2">
+  <h2 class="text-2xl mb-4">Employee List</h2>
+  
+  <a href="{% url "create" %}"><button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add Employee</button></a>
+    </div>
+
+  <!-- Classes Table -->
+  <div class="relative overflow-auto">
+    <div class="overflow-x-auto rounded-lg">
+      <table class="min-w-full bg-white border mb-20">
+        <thead>
+          <tr class="bg-[#2B4DC994] text-center text-xs md:text-sm font-thin text-white">
+            <th class="p-0">
+              <span class="block py-2 px-3 border-r border-gray-300">ID</span>
+            </th>
+            <th class="p-0">
+              <span class="block py-2 px-3 border-r border-gray-300">Full Name</span>
+            </th>
+            <th class="p-0">
+              <span class="block py-2 px-3 border-r border-gray-300">Email</span>
+            </th>
+            <th class="p-0">
+              <span class="block py-2 px-3 border-r border-gray-300">Address</span>
+            </th>
+            
+            <th class="p-0">
+              <span class="block py-2 px-3 border-r border-gray-300">Phone</span>
+            </th>
+            <th class="p-0">
+              <span class="block py-2 px-3 border-r border-gray-300">Salary</span>
+            </th>
+            
+
+            <th class="p-4 text-xs md:text-sm">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for emp in data%}
+          <tr class="border-b text-xs md:text-sm text-center text-gray-800">
+            <td class="p-2 md:p-4">{{emp.id}}</td>
+            <td class="p-2 md:p-4">{{emp.fullname}}</td>
+            <td class="p-2 md:p-4">{{emp.email}}</td>
+            <td class="p-2 md:p-4">{{emp.phone}}</td>
+            <td class="p-2 md:p-4">{{emp.address}}</td>
+            <td class="p-2 md:p-4">{{emp.salary}}</td>
+            <td class="relative p-2 md:p-4 flex justify-center space-x-2">
+              <a href="edit/{{emp.id}}"><button class="bg-blue-500 text-white px-3 py-1 rounded-md text-xs md:text-sm">Edit</button></a>
+              <button class="bg-red-500 text-white px-3 py-1 rounded-md text-xs md:text-sm">Delete</button>
+            </td>
+          </tr>
+          {% endfor%}
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

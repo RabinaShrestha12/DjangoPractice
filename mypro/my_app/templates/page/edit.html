@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Home Page</title>
+    {% load static %}
+<link  href ="{% static 'src/styles.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+<div class="max-w-md mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
+    <div class="text-2xl py-4 px-6 bg-gray-900 text-white text-center font-bold uppercase">
+      Edit
+    </div>
+    <form class="py-4 px-6" action="" method="POST">
+        <div class="mb-4">
+            {% csrf_token %}
+            <label class="block text-gray-700 font-bold mb-2" for="fullname">
+                fullname
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="fullname" type="text" name='fullname' placeholder="Enter your name" value = "{{empdata.fullname}}">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="email">
+                Email
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="email" type="email" name='email' placeholder="Enter your email" value = "{{empdata.email}}">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="phone">
+                Phone 
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="phone" type="number" name='phone' placeholder="Enter your phone number" value = "{{empdata.phone}}">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="address">
+              Address
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="address" type="text" name='address' placeholder="Select a address" value = "{{empdata.address}}">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="salary">
+             Salary
+            </label>
+            <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="salary" type="number" name='salary' placeholder="Amount" value = "{{empdata.salary}}">
+        
+        <div class="flex items-center justify-center mb-4">
+           <a href="{ % url "edit" empdata.id %}"> <button type = "submitt" class="bg-gray-900 text-white mt-5 py-2 px-4 rounded hover:bg-gray-800 focus:outline-none focus:shadow-outline" type="submit"> Submit</button></a>
+        </div>
+
+    </form>
+</div>
+</body>
+</html>
