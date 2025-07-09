@@ -19,7 +19,7 @@
             </label>
             <input
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="fullname" type="text" name='fullname' placeholder="Enter your name">
+                id="fullname" type="text" name='fullname' placeholder="Enter your name" value = "{{data.fullname}}">
                 <span class = "text-red-500">{{error.fullname}}</span>
         </div>
         <div class="mb-4">
@@ -28,7 +28,7 @@
             </label>
             <input
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="email" type="email" name='email' placeholder="Enter your email">
+                id="email" type="email" name='email' placeholder="Enter your email" value = "{{data.email}}">
                 <span class = "text-red-400">{{error.email}}</span>
         </div>
         <div class="mb-4">
@@ -37,7 +37,7 @@
             </label>
             <input
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="phone" type="number" name='phone' placeholder="Enter your phone number">
+                id="phone" type="number" name='phone' placeholder="Enter your phone number" value = "{{data.phone}}">
                 <spanc class = "text-red-500">{{error.phone}}</span>
         </div>
         <div class="mb-4">
@@ -46,7 +46,7 @@
             </label>
             <input
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="address" type="text" name='address' placeholder="Select a address">
+                id="address" type="text" name='address' placeholder="Select a address" value = "{{data.address}}">
         </div>
         <div class="mb-4">
             <label class="block text-gray-700 font-bold mb-2" for="salary">
@@ -54,7 +54,7 @@
             </label>
             <input
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="salary" type="text" name='salary' placeholder="Amount">
+                id="salary" type="text" name='salary' placeholder="Amount" value ="{{data.salary}}">
                 <span class = "text-red-500"{{error.salary}}></span>
         
         <div class="flex items-center justify-center mb-4">

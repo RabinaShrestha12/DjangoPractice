@@ -10,7 +10,7 @@
     <div class="text-2xl py-4 px-6 bg-gray-900 text-white text-center font-bold uppercase">
       Edit
     </div>
-    <form class="py-4 px-6" action="" method="POST">
+    <form class="py-4 px-6" action="{% url "edit" empdata.id %}" method="POST">
         <div class="mb-4">
             {% csrf_token %}
             <label class="block text-gray-700 font-bold mb-2" for="fullname">
@@ -53,7 +53,7 @@
                 id="salary" type="number" name='salary' placeholder="Amount" value = "{{empdata.salary}}">
         
         <div class="flex items-center justify-center mb-4">
-           <a href="{ % url "edit" empdata.id %}"> <button type = "submitt" class="bg-gray-900 text-white mt-5 py-2 px-4 rounded hover:bg-gray-800 focus:outline-none focus:shadow-outline" type="submit"> Submit</button></a>
+            <button type = "submitt" class="bg-gray-900 text-white mt-5 py-2 px-4 rounded hover:bg-gray-800 focus:outline-none focus:shadow-outline" type="submit"> Submit</button>
         </div>
 
     </form>

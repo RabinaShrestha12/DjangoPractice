@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Home Page</title>
+    {% load static %}
+    <link href="{% static 'src/styles.css' %}" rel="stylesheet" />
+</head>
+<div class="absolute top-4 right-4 flex gap-4">
+            <a href="{% url 'register' %}">
+                <button class="bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-900 transition">
+                    Register
+                </button>
+            </a>
+            {% comment %} <a href="{% url 'login' %}"> {% endcomment %}
+                <button class="bg-green-700 text-white px-4 py-2 rounded-md hover:bg-green-800 transition">
+                    Login
+                </button>
+            </a>
+        </div>
+<body class="bg-gradient-to-r from-indigo-200 via-purple-200 to-pink-200 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white shadow-2xl rounded-2xl w-full max-w-md p-6 relative">
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">📝 Expenses List</h1>
+        
+        <!-- Register and Login Buttons -->
+        
+
+        <!-- Add Button Centered -->
+        <div class="flex justify-center mt-8">
+            <a href="{% url 'indexs' %}">
+                <button class="bg-blue-700 text-white px-8 py-3 rounded-xl shadow-md hover:bg-blue-800 transition">
+                    Add Task
+                </button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
